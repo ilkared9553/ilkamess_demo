@@ -34,8 +34,8 @@ jobs:
 
       - name: Build APK
         run: |
-          # Мы добавляем разрешения на сеть и файлы, чтобы P2P работал
-          flet build apk --permissions INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
+          # Используем правильный синтаксис для разрешений Android
+          flet build apk --yes --android-permissions android.permission.INTERNET android.permission.WRITE_EXTERNAL_STORAGE android.permission.READ_EXTERNAL_STORAGE
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
